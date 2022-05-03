@@ -14,27 +14,48 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Ege Yıldırım Portfolio</title>
   </head>
+
   <body>
     <nav id="navbar">
       <h2>Ege Yıldırım</h2>
-      <ul class="navbar-right">
-        <li>About Me</li>
-        <li>Projects</li>
-        <li>Skills</li>
-        <li>Contact Me</li>
-      </ul>
+      <div class="navbar-right">
+        <a href="#navbar" id="about-me">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact-me">Contact Me</a>
+      </div>
     </nav>
 
-    <header id="header fadeIn">
-      <span class="header-1">Hi. </span>
-      <span class="header-2">I'm Ege Yıldırım.</span>
-      <h2>Front-end Developer.</h2>
-    </header>
+    <section id="bio" class="bio invisible">
+      <i class="fa-solid fa-xmark" id="close"></i>
+      <img src="images\ege_yildirim.jpg" alt="Ege Yıldırım" class="profile" />
+      <h2>About Me</h2>
+      <p>
+        Front-end Developer from Istanbul, Turkey. Currently working at
+        Segmentify (eCommerce personalisation platform) as Front-end Developer
+        Intern.
+      </p>
+      <p>Also a musician, plays electric guitar and drums.</p>
+      <p>
+        Loves science, playing computer games, reading about history, sci-fi,
+        philosophy. Always looking for ways to improve his Front-end
+        development, programming, web design, full-stack development skills.
+      </p>
+    </section>
 
-    <main>
-      <section id="bio"></section>
-      <section id="projects"></section>
-    </main>
+    <div class="flexbox">
+      <header id="header" class="fadeIn">
+        <span class="header-1">Hi. </span>
+        <span class="header-2">I'm Ege Yıldırım.</span>
+        <h2>Front-end Developer.</h2>
+      </header>
+
+      <main>
+        <section id="projects"></section>
+        <section id="skills"></section>
+        <section id="contact-me"></section>
+      </main>
+    </div>
 
     <script src="script.js"></script>
   </body>

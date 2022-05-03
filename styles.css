@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #242333;
   color: #fff;
+  position: relative;
 }
 
 #navbar {
@@ -31,28 +36,116 @@ body {
   align-items: center;
 }
 
-.navbar-right li {
+.navbar-right a {
+  text-decoration: none;
   padding: 2px;
-  color: rgb(184, 184, 184);
   margin-right: 3em;
+  color: rgb(184, 184, 184);
 }
 
-.navbar-right li:hover {
+.navbar-right a:hover {
   border-radius: 8px;
   transform: scale(1.2);
   color: rgb(248, 248, 248);
   cursor: pointer;
 }
 
-.navbar-right li:visited {
+.navbar-right a:visited {
   text-decoration: none;
 }
 
+.invisible {
+  display: none;
+}
+
+#bio {
+  position: fixed;
+  z-index: 1;
+  min-width: 100px;
+  max-width: 550px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #492075;
+  background-color: #373553;
+  text-align: center;
+  padding: 1em 2em;
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.open-modal {
+  animation: openModal 1s ease forwards;
+}
+
+.close-modal {
+  animation: closeModal 1s ease forwards;
+}
+
+#bio #close {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+#bio h2 {
+  color: transparent;
+  background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f);
+  background-clip: text;
+  animation: gradient 10s linear infinite;
+  background-size: 1000%;
+  margin-bottom: 1em;
+}
+
+.profile {
+  max-width: 200px;
+  max-height: 200px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid rgb(124, 124, 124);
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#bio p {
+  line-height: 1.8;
+  color: rgb(248, 248, 248);
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20vw;
+}
+
 header {
+  height: calc(100vh - (14em + 30px));
   margin-top: 10em;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   background-repeat: no-repeat;
   animation-duration: 5s;
   animation-fill-mode: both;
@@ -75,15 +168,15 @@ header {
 }
 
 .header-2 {
-  color: transparent;
   font-size: 55px;
+  color: transparent;
   background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f);
   background-clip: text;
-  animation: animate 10s linear infinite;
+  animation: gradient 10s linear infinite;
   background-size: 1000%;
 }
 
-@keyframes animate {
+@keyframes gradient {
   0% {
     background-position: 0% 100%;
   }
@@ -99,4 +192,9 @@ header h2 {
   color: #ffaaaa;
   font-size: 30px;
   margin-top: 2em;
+}
+
+main {
+  margin: 0;
+  position: relative;
 }
