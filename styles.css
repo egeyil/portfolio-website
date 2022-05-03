@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #242333;
+  color: #fff;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2em 5em;
+}
+
+#navbar h2 {
+  font-size: 30px;
+  margin: 0;
+}
+
+#navbar h2:hover {
+  color: rgb(174, 62, 226);
+}
+
+.navbar-right {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-right li {
+  padding: 2px;
+  color: rgb(184, 184, 184);
+  margin-right: 3em;
+}
+
+.navbar-right li:hover {
+  border-radius: 8px;
+  transform: scale(1.2);
+  color: rgb(248, 248, 248);
+  cursor: pointer;
+}
+
+.navbar-right li:visited {
+  text-decoration: none;
+}
+
+header {
+  margin-top: 10em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header-1 {
+  color: rgb(174, 62, 226);
+  font-size: 55px;
+}
+
+.header-2 {
+  color: transparent;
+  font-size: 55px;
+  background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f);
+  background-clip: text;
+  animation: animate 10s linear infinite;
+  background-size: 1000%;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+header h2 {
+  color: #ffaaaa;
+  font-size: 30px;
+  margin-top: 2em;
+}
