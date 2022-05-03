@@ -12,17 +12,20 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>Ege Yıldırım Portfolio</title>
+    <title>Ege Yıldırım</title>
   </head>
 
   <body>
     <nav id="navbar">
       <h2>Ege Yıldırım</h2>
       <div class="navbar-right">
-        <a href="#navbar" id="about-me">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact-me">Contact Me</a>
+        <a href="#" id="about-me">About Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact-me" class="nav-link">Contact Me</a>
+        <a href="images\Ege_Yildirim_Resume.pdf " download="Ege Yildirim Resume"
+          >Resume</a
+        >
       </div>
     </nav>
 
@@ -47,11 +50,50 @@
       <header id="header" class="fadeIn">
         <span class="header-1">Hi. </span>
         <span class="header-2">I'm Ege Yıldırım.</span>
-        <h2>Front-end Developer.</h2>
+        <h2>Front-end Developer. Web Designer. Musician.</h2>
+
+        <div class="links-top">
+          <a href="https://github.com/egeyil"
+            ><i class="fa-brands fa-github fa-3x"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/egeyildev/"
+            ><i class="fa-brands fa-linkedin fa-3x"></i
+          ></a>
+        </div>
       </header>
 
       <main>
-        <section id="projects"></section>
+        <section id="projects">
+          <h1>Projects</h1>
+          <div></div>
+          <div></div>
+          
+            <div class="project-card">
+              <div class="card-top">
+                <h2>This Website!</h2>
+                <img src="images\portfolio-website.png" alt="portfolio-website" />
+                <p>Made with HTML5, CSS3, Javascript</p>
+              </div>
+              <div class="links-project">
+                <a href="https://github.com/egeyil/portfolio-website"><i class="fa-brands fa-github fa-xl"></i>Github</a>
+              </div>
+            </div>
+      
+          
+            <div class="project-card">
+              <h2>Wordle Clone</h2>
+              <img src="images\wordle-clone.png" alt="wordle-clone" />
+              <p>Made with HTML5, CSS3, Javascript</p>
+              <div class="links-project">
+                <a href=""><i class="fa-solid fa-globe fa-xl"></i>Live Code</a>
+                <a href=""><i class="fa-brands fa-github fa-xl"></i>Github</a>
+              </div>
+            </div>
+          
+          
+      
+          </div>
+        </section>
         <section id="skills"></section>
         <section id="contact-me"></section>
       </main>

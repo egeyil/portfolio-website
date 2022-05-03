@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  transition: 0.5s;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -62,7 +64,7 @@ body {
   position: fixed;
   z-index: 1;
   min-width: 100px;
-  max-width: 550px;
+  max-width: 750px;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -145,12 +147,14 @@ body {
 header {
   height: calc(100vh - (14em + 30px));
   margin-top: 10em;
+  margin-bottom: 3em;
   text-align: center;
   background-repeat: no-repeat;
   animation-duration: 5s;
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  position: relative;
 }
 
 @keyframes fadeIn {
@@ -194,7 +198,102 @@ header h2 {
   margin-top: 2em;
 }
 
+.links-top {
+  text-align: center;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header a {
+  text-decoration: none;
+  color: #000000;
+  margin: 0 1em;
+}
+
+header a:visited {
+  text-decoration: none;
+}
+
+header a:hover {
+  color: rgb(197, 197, 197);
+}
+
 main {
-  margin: 0;
-  position: relative;
+  margin: 5em 0;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw;
+  gap: 55px 55px;
+}
+
+#projects h1 {
+  font-size: 55px;
+  padding: 10px 0;
+  text-decoration: underline solid 4px rgb(48, 102, 123);
+}
+
+#projects h1:hover {
+  color: #7d0047;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #333c60;
+  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  padding: 1em 2em;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+}
+
+.card-top {
+  height: 300px;
+}
+
+.project-card h2 {
+  text-align: center;
+}
+
+.project-card img {
+  object-fit: contain;
+  max-height: 90%;
+  max-width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+
+.project-card p {
+  margin-top: 2em;
+  font-size: 14px;
+}
+
+.links-project {
+  float: inline-end;
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #000000;
+  margin: 0 1em;
+}
+
+.project-card a:hover {
+  color: rgb(197, 197, 197);
+}
+
+.project-card a:visited {
+  text-decoration: none;
 }
