@@ -1,5 +1,6 @@
 "use strict";
 
+//================MODAL POPUP============================
 const openBtn = document.getElementById("about-me");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("bio");
@@ -29,4 +30,4 @@ closeBtn.addEventListener("click", closeModal);
 //   }
 // });
 
-//=======================================================
+//================CONTACT FORM==============================

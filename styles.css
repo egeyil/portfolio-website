@@ -4,6 +4,7 @@
   box-sizing: border-box;
   transition: 0.5s;
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body {
@@ -216,7 +217,7 @@ header a:visited {
 }
 
 header a:hover {
-  color: rgb(197, 197, 197);
+  color: #ccbcbc;
 }
 
 main {
@@ -232,6 +233,7 @@ main {
 #projects h1 {
   font-size: 55px;
   padding: 10px 0;
+  color: #7432b9;
   text-decoration: underline solid 4px rgb(48, 102, 123);
 }
 
@@ -312,6 +314,7 @@ main {
   text-align: left;
   font-size: 55px;
   padding: 10px 0;
+  color: #eeebb9;
   text-decoration: underline solid 4px rgb(48, 102, 123);
   margin-bottom: 2em;
 }
@@ -336,6 +339,39 @@ main {
   background-clip: text;
   animation: gradient 10s linear infinite;
   background-size: 1000%;
+}
+
+#contact-me h1 {
+  text-align: center;
+  font-size: 55px;
+  padding: 10px 0;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  color: transparent;
+  background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f);
+  background-clip: text;
+  animation: gradient 10s linear infinite;
+  background-size: 1000%;
+}
+
+#contact-me h1:hover {
+  cursor: pointer;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+.contact-icons a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  color: #ccbcbc;
 }
 
 @media (max-width: 950px) {
