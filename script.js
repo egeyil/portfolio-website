@@ -6,25 +6,36 @@ const openButtonHamburger = document.querySelector(".about-me-hamburger");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("bio");
 
+function closeModalByOutsideClick(event) {
+  if (event.target.closest("#bio")) return;
+  if (event.target.closest(".about-me")) return;
+  closeModal();
+}
+
 function openModal() {
   modal.classList.remove("invisible");
-  modal.classList.add("open-modal");
+  modal.classList.add("open-modal-animation");
+  openButton.removeEventListener("click", openModal);
+  openButton.addEventListener("click", closeModal);
+  document.addEventListener("click", closeModalByOutsideClick);
   setTimeout(() => {
-    modal.classList.remove("open-modal");
-  }, 1000);
+    modal.classList.remove("open-modal-animation");
+  }, 650);
 }
 
 function closeModal() {
-  modal.classList.add("close-modal");
+  modal.classList.add("close-modal-animation");
+  document.removeEventListener("click", closeModalByOutsideClick);
+  openButton.removeEventListener("click", closeModal);
+  openButton.addEventListener("click", openModal);
   setTimeout(() => {
     modal.classList.add("invisible");
-    modal.classList.remove("close-modal");
-  }, 1000);
+    modal.classList.remove("close-modal-animation");
+  }, 650);
 }
 
 openButton.addEventListener("click", openModal);
 openButtonHamburger.addEventListener("click", openModal);
-
 closeBtn.addEventListener("click", closeModal);
 
 //================HAMBURGER MENU AUTOMATIC CLOSING===================

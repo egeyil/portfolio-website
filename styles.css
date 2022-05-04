@@ -102,12 +102,12 @@ body {
   }
 }
 
-.open-modal {
-  animation: openModal 1s ease forwards;
+.open-modal-animation {
+  animation: openModal 0.5s linear forwards;
 }
 
-.close-modal {
-  animation: closeModal 1s ease forwards;
+.close-modal-animation {
+  animation: closeModal 0.5s linear forwards;
 }
 
 #bio #close {
