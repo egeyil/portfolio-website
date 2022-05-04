@@ -5,46 +5,47 @@ const openButton = document.querySelector(".about-me");
 const openButtonHamburger = document.querySelector(".about-me-hamburger");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("bio");
-
-function closeModalByOutsideClick(event) {
-  if (event.target.closest("#bio")) return;
-  if (event.target.closest(".about-me")) return;
-  closeModal();
-}
+const hamburgerItemsNodeList = document.querySelectorAll(".hamburger-item"); // NodeList
+const hamburgerItems = Array.from(hamburgerItemsNodeList);
+const sideBarMenu = document.getElementById("sidebar-menu");
+const hamburgerInput = document.getElementById("hamburger-input");
+const hamburgerMenu = document.getElementById("hamburger-menu");
 
 function openModal() {
   modal.classList.remove("invisible");
   modal.classList.add("open-modal-animation");
-  openButton.removeEventListener("click", openModal);
-  openButton.addEventListener("click", closeModal);
-  document.addEventListener("click", closeModalByOutsideClick);
   setTimeout(() => {
     modal.classList.remove("open-modal-animation");
-  }, 650);
+  }, 520);
 }
 
 function closeModal() {
   modal.classList.add("close-modal-animation");
-  document.removeEventListener("click", closeModalByOutsideClick);
-  openButton.removeEventListener("click", closeModal);
-  openButton.addEventListener("click", openModal);
   setTimeout(() => {
     modal.classList.add("invisible");
     modal.classList.remove("close-modal-animation");
-  }, 650);
+  }, 520);
 }
 
-openButton.addEventListener("click", openModal);
+function openModalNavbar() {
+  openButton.removeEventListener("click", openModalNavbar);
+  openButton.addEventListener("click", closeModalNavbar);
+  openModal();
+}
+
+function closeModalNavbar() {
+  openButton.removeEventListener("click", closeModalNavbar);
+  openButton.addEventListener("click", openModalNavbar);
+  closeModal();
+}
+
+openButton.addEventListener("click", openModalNavbar);
 openButtonHamburger.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
 //================HAMBURGER MENU AUTOMATIC CLOSING===================
-const hamburgerItemsNodeList = document.querySelectorAll(".hamburger-item"); // NodeList
-const hamburgerItems = Array.from(hamburgerItemsNodeList);
-const sideBarMenu = document.getElementById("sidebar-menu");
-
 hamburgerItems.forEach((item) => {
   item.addEventListener("click", () => {
-    document.getElementById("hamburger-input").checked = false;
+    hamburgerInput.checked = false;
   });
 });
