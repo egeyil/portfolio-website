@@ -24,11 +24,15 @@
         <nav id="sidebar-menu">
           <h3>Menu</h3>
           <ul>
-            <li><a href="#" class="about-me-hamburger">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact-me">Contact Me</a></li>
-            <li>
+            <li class="hamburger-item">
+              <a href="#" class="about-me-hamburger">About Me</a>
+            </li>
+            <li class="hamburger-item"><a href="#projects">Projects</a></li>
+            <li class="hamburger-item"><a href="#skills">Skills</a></li>
+            <li class="hamburger-item">
+              <a href="#contact-me-anchor">Contact Me</a>
+            </li>
+            <li class="hamburger-item">
               <a
                 href="images\Ege_Yildirim_Resume.pdf "
                 download="Ege Yildirim Resume"
@@ -39,13 +43,13 @@
         </nav>
       </label>
 
-      <div class="overlay"></div>
+      <!-- <div class="overlay"></div> -->
 
       <div class="navbar-right">
         <a href="#" class="about-me">About Me</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact-me" class="nav-link">Contact Me</a>
+        <a href="#contact-me-anchor" class="nav-link">Contact Me</a>
         <a href="images\Ege_Yildirim_Resume.pdf " download="Ege Yildirim Resume"
           >Resume</a
         >
@@ -95,134 +99,136 @@
     </header>
 
     <main>
-      <h1 class="projects-title">Projects</h1>
       <section id="projects">
-        <div class="project-card">
-          <div class="card-top">
-            <h2>This Website!</h2>
-            <img src="images\portfolio-website.png" alt="portfolio-website" />
+        <h1 class="projects-title">Projects</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="card-top">
+              <h2>This Website!</h2>
+              <img src="images\portfolio-website.png" alt="portfolio-website" />
+            </div>
+            <p>Made with HTML5, CSS3, Javascript</p>
+            <div class="links-project">
+              <a
+                href="https://github.com/egeyil/portfolio-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
-          <p>Made with HTML5, CSS3, Javascript</p>
-          <div class="links-project">
-            <a
-              href="https://github.com/egeyil/portfolio-website"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="card-top">
-            <h2>Wordle Clone</h2>
-            <img src="images\wordle-clone.png" alt="wordle-clone" />
+          <div class="project-card">
+            <div class="card-top">
+              <h2>Wordle Clone</h2>
+              <img src="images\wordle-clone.png" alt="wordle-clone" />
+            </div>
+            <p>Made with HTML5, CSS3, Javascript</p>
+            <div class="links-project">
+              <a
+                href="https://egeyil.github.io/Wordle-Clone/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-solid fa-globe fa-xl"></i
+              ></a>
+              <a
+                href="https://github.com/egeyil/Wordle-Clone"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
-          <p>Made with HTML5, CSS3, Javascript</p>
-          <div class="links-project">
-            <a
-              href="https://egeyil.github.io/Wordle-Clone/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-globe fa-xl"></i
-            ></a>
-            <a
-              href="https://github.com/egeyil/Wordle-Clone"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="card-top">
-            <h2>Weather App</h2>
-            <img src="images\weather-app.png" alt="weather-app" />
+          <div class="project-card">
+            <div class="card-top">
+              <h2>Weather App</h2>
+              <img src="images\weather-app.png" alt="weather-app" />
+            </div>
+            <p>Made with Javascript, Unsplash API, OpenWeatherMap API</p>
+            <div class="links-project">
+              <a
+                href="https://egeyil.github.io/weather-app-js/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-solid fa-globe fa-xl"></i
+              ></a>
+              <a
+                href="https://github.com/egeyil/weather-app-js"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
-          <p>Made with Javascript, Unsplash API, OpenWeatherMap API</p>
-          <div class="links-project">
-            <a
-              href="https://egeyil.github.io/weather-app-js/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-globe fa-xl"></i
-            ></a>
-            <a
-              href="https://github.com/egeyil/weather-app-js"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="card-top">
-            <h2>Tindog</h2>
-            <img src="images\tindog.png" alt="tindog" />
+          <div class="project-card">
+            <div class="card-top">
+              <h2>Tindog</h2>
+              <img src="images\tindog.png" alt="tindog" />
+            </div>
+            <p>Made with HTML5, CSS3, Bootstrap</p>
+            <div class="links-project">
+              <a
+                href="https://egeyil.github.io/tindog/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-solid fa-globe fa-xl"></i
+              ></a>
+              <a
+                href="https://github.com/egeyil/tindog"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
-          <p>Made with HTML5, CSS3, Bootstrap</p>
-          <div class="links-project">
-            <a
-              href="https://egeyil.github.io/tindog/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-globe fa-xl"></i
-            ></a>
-            <a
-              href="https://github.com/egeyil/tindog"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="card-top">
-            <h2>eCommerce App</h2>
-            <img src="images\ecommerce-app.png" alt="ecommerce-app" />
+          <div class="project-card">
+            <div class="card-top">
+              <h2>eCommerce App</h2>
+              <img src="images\ecommerce-app.png" alt="ecommerce-app" />
+            </div>
+            <p>
+              Made with HTML5, CSS3, Javascript, Fully responsive, dynamically
+              loaded via Fetch API
+            </p>
+            <div class="links-project">
+              <a
+                href="https://egeyil.github.io/segmentify-frontend/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-solid fa-globe fa-xl"></i
+              ></a>
+              <a
+                href="https://github.com/egeyil/segmentify-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
-          <p>
-            Made with HTML5, CSS3, Javascript, Fully responsive, dynamically
-            loaded via Fetch API
-          </p>
-          <div class="links-project">
-            <a
-              href="https://egeyil.github.io/segmentify-frontend/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-globe fa-xl"></i
-            ></a>
-            <a
-              href="https://github.com/egeyil/segmentify-frontend"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
-          </div>
-        </div>
 
-        <div class="project-card">
-          <div class="card-top">
-            <h2>Robofriends</h2>
-            <img src="images\robofriends.png" alt="robofriends" />
-          </div>
-          <p>Made with React.js</p>
-          <div class="links-project">
-            <a
-              href="https://egeyil.github.io/robofriends/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-globe fa-xl"></i
-            ></a>
-            <a
-              href="https://github.com/egeyil/robofriends"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-github fa-xl"></i
-            ></a>
+          <div class="project-card">
+            <div class="card-top">
+              <h2>Robofriends</h2>
+              <img src="images\robofriends.png" alt="robofriends" />
+            </div>
+            <p>Made with React.js</p>
+            <div class="links-project">
+              <a
+                href="https://egeyil.github.io/robofriends/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-solid fa-globe fa-xl"></i
+              ></a>
+              <a
+                href="https://github.com/egeyil/robofriends"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-github fa-xl"></i
+              ></a>
+            </div>
           </div>
         </div>
       </section>
@@ -266,6 +272,7 @@
             ><i class="fa-solid fa-envelope fa-3x"></i
           ></a>
         </div>
+        <div id="contact-me-anchor"></div>
       </section>
     </main>
 

@@ -26,3 +26,14 @@ openButton.addEventListener("click", openModal);
 openButtonHamburger.addEventListener("click", openModal);
 
 closeBtn.addEventListener("click", closeModal);
+
+//================HAMBURGER MENU AUTOMATIC CLOSING===================
+const hamburgerItemsNodeList = document.querySelectorAll(".hamburger-item"); // NodeList
+const hamburgerItems = Array.from(hamburgerItemsNodeList);
+const sideBarMenu = document.getElementById("sidebar-menu");
+
+hamburgerItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    document.getElementById("hamburger-input").checked = false;
+  });
+});
