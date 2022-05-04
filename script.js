@@ -15,16 +15,26 @@ function openModal() {
   modal.classList.remove("invisible");
   modal.classList.add("open-modal-animation");
   setTimeout(() => {
+    document.addEventListener("click", closeModalByOutsideClick);
     modal.classList.remove("open-modal-animation");
   }, 520);
 }
 
 function closeModal() {
   modal.classList.add("close-modal-animation");
+  document.removeEventListener("click", closeModalByOutsideClick);
   setTimeout(() => {
     modal.classList.add("invisible");
     modal.classList.remove("close-modal-animation");
   }, 520);
+}
+
+function closeModalByOutsideClick(e) {
+  if (modal.contains(e.target)) {
+    return;
+  } else {
+    closeModal();
+  }
 }
 
 function openModalNavbar() {
