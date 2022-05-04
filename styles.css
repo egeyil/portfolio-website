@@ -141,7 +141,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20vw;
 }
 
 header {
@@ -306,6 +305,37 @@ main {
 
 .project-end {
   text-align: center;
+  margin: 5em 0;
+}
+
+#skills h1 {
+  text-align: left;
+  font-size: 55px;
+  padding: 10px 0;
+  text-decoration: underline solid 4px rgb(48, 102, 123);
+  margin-bottom: 2em;
+}
+
+#skills h1:hover {
+  color: #7d0047;
+}
+
+#skills {
+  text-align: center;
+}
+
+.skills-icons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 50px 50px;
+}
+
+.skills-icons i:hover {
+  color: transparent;
+  background-image: linear-gradient(to right, #f00, #ff0, #0f0, #00f);
+  background-clip: text;
+  animation: gradient 10s linear infinite;
+  background-size: 1000%;
 }
 
 @media (max-width: 950px) {
