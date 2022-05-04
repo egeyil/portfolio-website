@@ -18,8 +18,31 @@
   <body>
     <nav id="navbar">
       <h2>Ege Yıldırım</h2>
+
+      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+      <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="#" class="about-me-hamburger">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact-me">Contact Me</a></li>
+            <li>
+              <a
+                href="images\Ege_Yildirim_Resume.pdf "
+                download="Ege Yildirim Resume"
+                >Resume</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </label>
+
+      <div class="overlay"></div>
+
       <div class="navbar-right">
-        <a href="#" id="about-me">About Me</a>
+        <a href="#" class="about-me">About Me</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact-me" class="nav-link">Contact Me</a>
@@ -29,28 +52,32 @@
       </div>
     </nav>
 
-    <section id="bio" class="bio invisible">
-      <i class="fa-solid fa-xmark" id="close"></i>
-      <img src="images\ege_yildirim.jpg" alt="Ege Yıldırım" class="profile" />
-      <h2>About Me</h2>
-      <p>
-        Front-end Developer from Istanbul, Turkey. Currently working at
-        Segmentify (eCommerce personalisation platform) as Front-end Developer
-        Intern.
-      </p>
-      <p>Also a musician, plays electric guitar and drums.</p>
-      <p>
-        Loves science, playing computer games, reading about history, sci-fi,
-        philosophy. Always looking for ways to improve his Front-end
-        development, programming, web design, full-stack development skills.
-      </p>
-    </section>
+    <div class="bio-flexbox">
+      <section id="bio" class="bio invisible">
+        <i class="fa-solid fa-xmark" id="close"></i>
+        <img src="images\ege_yildirim.jpg" alt="Ege Yıldırım" class="profile" />
+        <h2>About Me</h2>
+        <p>
+          Front-end Developer from Istanbul, Turkey. Currently working at
+          Segmentify (eCommerce personalisation platform) as Front-end Developer
+          Intern.
+        </p>
+        <p>Also a musician, plays electric guitar and drums.</p>
+        <p>
+          Loves science, playing computer games, reading about history, sci-fi,
+          philosophy. Always looking for ways to improve his Front-end
+          development, programming, web design, full-stack development skills.
+        </p>
+      </section>
+    </div>
 
     <div class="flexbox">
       <header id="header" class="fadeIn">
-        <span class="header-1">Hi. </span>
-        <span class="header-2">I'm Ege Yıldırım.</span>
-        <h2>Front-end Developer. Web Designer. Musician.</h2>
+        <div class="flex-1">
+          <span class="header-1">Hi. </span>
+          <span class="header-2">I'm Ege Yıldırım.</span>
+          <h2>Front-end Developer. Web Designer. Musician.</h2>
+        </div>
 
         <div class="links-top">
           <a
@@ -69,11 +96,8 @@
       </header>
 
       <main>
+        <h1 class="projects-title">Projects</h1>
         <section id="projects">
-          <h1>Projects</h1>
-          <div></div>
-          <div></div>
-
           <div class="project-card">
             <div class="card-top">
               <h2>This Website!</h2>

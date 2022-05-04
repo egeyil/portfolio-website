@@ -1,7 +1,8 @@
 "use strict";
 
 //================MODAL POPUP============================
-const openBtn = document.getElementById("about-me");
+const openButton = document.querySelector(".about-me");
+const openButtonHamburger = document.querySelector(".about-me-hamburger");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("bio");
 
@@ -21,13 +22,7 @@ function closeModal() {
   }, 1000);
 }
 
-openBtn.addEventListener("click", openModal);
-closeBtn.addEventListener("click", closeModal);
-// modal.addEventListener("click", function (e) {
-//   if (e.target.classList.contains("bio")) {
-//     console.log("zart");
-//     closeModal();
-//   }
-// });
+openButton.addEventListener("click", openModal);
+openButtonHamburger.addEventListener("click", openModal);
 
-//================CONTACT FORM==============================
+closeBtn.addEventListener("click", closeModal);

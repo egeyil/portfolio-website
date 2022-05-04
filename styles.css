@@ -30,6 +30,11 @@ body {
   color: rgb(174, 62, 226);
 }
 
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
 .navbar-right {
   margin: 0;
   list-style: none;
@@ -61,14 +66,16 @@ body {
   display: none;
 }
 
+.bio-flexbox {
+  display: flex;
+  justify-content: center;
+}
+
 #bio {
   position: fixed;
   z-index: 1;
   min-width: 100px;
   max-width: 750px;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #492075;
@@ -144,8 +151,8 @@ body {
   align-items: center;
 }
 
-header {
-  height: calc(100vh - (14em + 30px));
+#header {
+  height: calc(100vh - 25em);
   margin-top: 10em;
   margin-bottom: 3em;
   text-align: center;
@@ -154,7 +161,10 @@ header {
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 @keyframes fadeIn {
@@ -200,10 +210,7 @@ header h2 {
 
 .links-top {
   text-align: center;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 2em;
 }
 
 header a {
@@ -230,14 +237,16 @@ main {
   gap: 55px 55px;
 }
 
-#projects h1 {
+.projects-title {
+  overflow: hidden;
+  margin-bottom: 2em;
   font-size: 55px;
   padding: 10px 0;
   color: #7432b9;
   text-decoration: underline solid 4px rgb(48, 102, 123);
 }
 
-#projects h1:hover {
+.projects-title:hover {
   color: #7d0047;
 }
 
@@ -250,8 +259,8 @@ main {
   border: 2px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   border-radius: 7px;
-  padding: 1em 2em;
-  max-height: 500px;
+  padding: 1em 1em;
+  min-height: 450px;
 }
 
 .project-card:hover {
@@ -354,10 +363,6 @@ main {
   background-size: 1000%;
 }
 
-#contact-me h1:hover {
-  cursor: pointer;
-}
-
 .contact-icons {
   display: flex;
   justify-content: center;
@@ -374,14 +379,143 @@ main {
   color: #ccbcbc;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+  background: black;
+  z-index: 0;
+}
+
+#hamburger-input {
+  display: none;
+}
+
+#hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(
+    to bottom,
+    #3d0e61,
+    #3d0e61 20%,
+    transparent 20%,
+    transparent 40%,
+    #3d0e61 40%,
+    #3d0e61 60%,
+    transparent 60%,
+    transparent 80%,
+    #3d0e61 80%,
+    #3d0e61 100%
+  );
+  z-index: 3;
+}
+
+#hamburger-menu #sidebar-menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 200px;
+  height: 100%;
+  background-color: #242333;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  z-index: 9;
+  transition: 0.5s;
+}
+
+#hamburger-menu h3 {
+  color: rgb(174, 62, 226);
+  font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+  padding-left: 0px;
+}
+
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+}
+
+#hamburger-menu a {
+  color: #b9faf8;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+  visibility: visible;
+  right: 0;
+}
+
+#hamburger-input:checked ~ .overlay {
+  visibility: visible;
+  opacity: 0.4;
+}
+
 @media (max-width: 950px) {
+  .navbar-right {
+    display: none;
+  }
+  #hamburger-menu {
+    display: inline;
+  }
+  #projects {
+    grid-template-columns: 40vw 40vw;
+    gap: 35px 35px;
+  }
+  .projects-title {
+    text-align: center;
+  }
+  .project-card {
+    min-height: 250px;
+    max-height: 400px;
+    padding: 5px 15px;
+  }
   .project-card h2 {
     font-size: 1.2em;
   }
+  .project-card img {
+    max-height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+  }
+  .project-card p {
+    font-size: 12px;
+  }
+  .links-project {
+    margin-bottom: 1em;
+  }
+  #skills h1 {
+    text-align: center;
+  }
 }
 
-@media (max-width: 700px) {
-  .project-card h2 {
-    font-size: 1em;
+@media (max-width: 650px) {
+  #bio h2 {
+    margin-bottom: 0.5em;
+  }
+  .profile {
+    max-width: 100px;
+    max-height: 150px;
+  }
+  #bio p {
+    font-size: 14px;
   }
 }
