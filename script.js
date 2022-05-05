@@ -49,13 +49,22 @@ function closeModalNavbar() {
   closeModal();
 }
 
-openButton.addEventListener("click", openModalNavbar);
-openButtonHamburger.addEventListener("click", openModal);
-closeBtn.addEventListener("click", closeModal);
-
 //================HAMBURGER MENU AUTOMATIC CLOSING===================
 hamburgerItems.forEach((item) => {
   item.addEventListener("click", () => {
     hamburgerInput.checked = false;
   });
 });
+
+function closeHamburgerByOutsideClick(e) {
+  if (hamburgerMenu.contains(e.target) || hamburgerInput.contains(e.target)) {
+    return;
+  } else {
+    hamburgerInput.checked = false;
+  }
+}
+
+openButton.addEventListener("click", openModalNavbar);
+openButtonHamburger.addEventListener("click", openModal);
+document.addEventListener("click", closeHamburgerByOutsideClick);
+closeBtn.addEventListener("click", closeModal);

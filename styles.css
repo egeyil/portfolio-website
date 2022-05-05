@@ -386,6 +386,7 @@ main {
 
 #hamburger-input {
   display: none;
+  opacity: 0.5;
 }
 
 #hamburger-menu {
@@ -412,7 +413,6 @@ main {
     #3d0e61 100%
   );
   z-index: 3;
-  opacity: 0.5;
 }
 
 #hamburger-menu #sidebar-menu {
@@ -420,7 +420,7 @@ main {
   position: fixed;
   top: 0;
   right: -250px;
-  width: 200px;
+  width: 170px;
   height: 100%;
   background-color: #403e5c;
   padding: 0px 10px;
@@ -551,6 +551,9 @@ main {
     text-align: left;
     font-size: 25px;
     margin: 0;
+  }
+  #hamburger-menu #sidebar-menu {
+    width: 150px;
   }
   #header h2 {
     font-size: 25px;
