@@ -15,10 +15,16 @@ body {
 }
 
 #navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 2em 5em;
+  padding: 1.2em 5em;
+  background-color: #2e2c41;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.19);
 }
 
 #navbar h2 {
@@ -73,7 +79,7 @@ body {
 
 #bio {
   position: fixed;
-  z-index: 1;
+  z-index: 101;
   min-width: 100px;
   max-width: 750px;
   border-radius: 15px;
@@ -159,7 +165,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 1em;
-  height: 70vh;
+  height: 65vh;
   min-height: 450px;
 }
 
@@ -403,10 +409,10 @@ main {
 
 #hamburger-menu {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
   display: none;
   border: none;
   padding: 0px;
@@ -425,6 +431,7 @@ main {
     #3d0e61 100%
   );
   z-index: 3;
+  opacity: 0.5;
 }
 
 #hamburger-menu #sidebar-menu {
@@ -472,11 +479,22 @@ main {
 }
 
 @media (max-width: 950px) {
+  #navbar {
+    position: static;
+    background-color: #242333;
+    border: none;
+    padding-right: 2em;
+    padding-left: 2em;
+  }
   .navbar-right {
     display: none;
   }
   #hamburger-menu {
     display: inline;
+  }
+  #bio {
+    top: 10%;
+    width: 75vw;
   }
   .projects-grid {
     grid-template-columns: 40vw 40vw;
@@ -536,6 +554,14 @@ main {
     text-align: left;
     font-size: 25px;
     margin: 0;
+  }
+  #bio h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 24px;
+  }
+  #bio p {
+    font-size: 12px;
   }
   .projects-grid {
     grid-template-columns: 70vw;
