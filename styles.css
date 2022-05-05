@@ -166,7 +166,6 @@ body {
   justify-content: space-between;
   gap: 1em;
   height: 75vh;
-  min-height: 450px;
 }
 
 @keyframes fadeIn {
@@ -389,20 +388,6 @@ main {
   color: #ccbcbc;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
-  overflow: hidden;
-  background: black;
-  z-index: 0;
-}
-
 #hamburger-input {
   display: none;
 }
@@ -530,6 +515,7 @@ main {
 @media (max-width: 650px) {
   #header {
     margin-top: 80px;
+    height: 80vh;
   }
   #bio h2 {
     margin-bottom: 0.5em;
