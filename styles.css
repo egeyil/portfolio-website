@@ -528,6 +528,9 @@ main {
 }
 
 @media (max-width: 650px) {
+  #header {
+    margin-top: 80px;
+  }
   #bio h2 {
     margin-bottom: 0.5em;
   }
@@ -554,9 +557,6 @@ main {
     text-align: left;
     font-size: 25px;
     margin: 0;
-  }
-  #header {
-    height: 60vh;
   }
   #bio h2 {
     margin-top: 1em;
