@@ -464,6 +464,9 @@ main {
 }
 
 @media (max-width: 950px) {
+  #header {
+    margin-top: 80px;
+  }
   #navbar {
     position: static;
     background-color: #242333;
@@ -515,7 +518,7 @@ main {
 @media (max-width: 650px) {
   #header {
     margin-top: 80px;
-    height: 80vh;
+    height: 600px;
   }
   #header h2 {
     margin-right: 1em;
