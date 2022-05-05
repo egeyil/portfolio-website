@@ -555,6 +555,9 @@ main {
     font-size: 25px;
     margin: 0;
   }
+  #header {
+    height: 60vh;
+  }
   #bio h2 {
     margin-top: 1em;
     margin-bottom: 1em;
