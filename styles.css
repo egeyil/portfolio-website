@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  transition: 0.5s;
   scroll-behavior: smooth;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -15,6 +14,16 @@ body {
   background-color: #242333;
   color: #fff;
   position: relative;
+}
+
+a,
+h1,
+h2,
+.skills-icons i,
+.project-card {
+  transition-duration: 0.4s;
+  text-decoration: none;
+  border: none;
 }
 
 #navbar {
@@ -430,6 +439,7 @@ main {
 }
 
 .contact-icons a {
+  transition-duration: 0.2s;
   color: #000000;
   text-decoration: none;
 }

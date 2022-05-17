@@ -68,3 +68,12 @@ openButton.addEventListener("click", openModalNavbar);
 openButtonHamburger.addEventListener("click", openModal);
 document.addEventListener("click", closeHamburgerByOutsideClick);
 closeBtn.addEventListener("click", closeModal);
+
+//================PAGE SCROLLING AND ANCHOR TAGS=======================
+function scrollSmoothTo(elementId) {
+  var pageSection = document.getElementById(elementId);
+  pageSection.scrollIntoView({
+    block: "start",
+    behavior: "smooth",
+  });
+}
