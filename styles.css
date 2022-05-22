@@ -29,6 +29,7 @@ h2,
 #navbar {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
   width: 100%;
   display: flex;
@@ -582,13 +583,13 @@ main {
   }
   #header h2 {
     font-size: 24px;
-    margin-right: 1em;
-    margin-left: 1em;
-    margin-top: 90px;
-    margin-bottom: 18vh;
+    margin: 1em 0 150px 0;
   }
   .links-top {
     margin-bottom: 25vh;
+  }
+  #bio {
+    top: 50px;
   }
   #bio h2 {
     margin-bottom: 0.5em;
@@ -645,5 +646,45 @@ main {
   }
   .contact-icons {
     gap: 2em;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  header h2 {
+    margin-bottom: 120px;
+  }
+  .links-top {
+    margin-bottom: 150px;
+  }
+  #bio {
+    top: 100px;
+    width: 55vw;
+  }
+  #bio .profile {
+    max-height: 150px;
+  }
+  #bio h2 {
+    font-size: 20px;
+    margin-top: 14px;
+  }
+  #bio p {
+    font-size: 14px;
+  }
+  .projects-grid {
+    grid-template-columns: 22.5vw 22.5vw 22.5vw;
+    gap: 20px;
+  }
+  .project-card {
+    min-height: 0;
+  }
+  .fa-xl {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-height: 650px) and (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 40vw 40vw;
+    gap: 35px 35px;
   }
 }
