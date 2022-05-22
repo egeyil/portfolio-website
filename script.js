@@ -1,36 +1,31 @@
 "use strict";
 
 //================MODAL POPUP============================
-const openButton = document.querySelector(".about-me");
-const openButtonHamburger = document.querySelector(".about-me-hamburger");
-const closeBtn = document.getElementById("close");
-const modal = document.getElementById("bio");
-const hamburgerItemsNodeList = document.querySelectorAll(".hamburger-item"); // NodeList
-const hamburgerItems = Array.from(hamburgerItemsNodeList);
-const sideBarMenu = document.getElementById("sidebar-menu");
-const hamburgerInput = document.getElementById("hamburger-input");
-const hamburgerMenu = document.getElementById("hamburger-menu");
+const openAboutMe = document.querySelector(".about-me");
+const openAboutMeFromHamburger = document.querySelector(".about-me-hamburger");
+const closeAboutMe = document.getElementById("close");
+const aboutMe = document.getElementById("bio");
 
 function openModal() {
-  modal.classList.remove("invisible");
-  modal.classList.add("open-modal-animation");
+  aboutMe.classList.remove("invisible");
+  aboutMe.classList.add("open-aboutMe-animation");
   setTimeout(() => {
     document.addEventListener("click", closeModalByOutsideClick);
-    modal.classList.remove("open-modal-animation");
+    aboutMe.classList.remove("open-aboutMe-animation");
   }, 520);
 }
 
 function closeModal() {
-  modal.classList.add("close-modal-animation");
+  aboutMe.classList.add("close-aboutMe-animation");
   document.removeEventListener("click", closeModalByOutsideClick);
   setTimeout(() => {
-    modal.classList.add("invisible");
-    modal.classList.remove("close-modal-animation");
+    aboutMe.classList.add("invisible");
+    aboutMe.classList.remove("close-aboutMe-animation");
   }, 520);
 }
 
 function closeModalByOutsideClick(e) {
-  if (modal.contains(e.target)) {
+  if (aboutMe.contains(e.target)) {
     return;
   } else {
     closeModal();
@@ -38,36 +33,55 @@ function closeModalByOutsideClick(e) {
 }
 
 function openModalNavbar() {
-  openButton.removeEventListener("click", openModalNavbar);
-  openButton.addEventListener("click", closeModalNavbar);
+  openAboutMe.removeEventListener("click", openModalNavbar);
+  openAboutMe.addEventListener("click", closeModalNavbar);
   openModal();
 }
 
 function closeModalNavbar() {
-  openButton.removeEventListener("click", closeModalNavbar);
-  openButton.addEventListener("click", openModalNavbar);
+  openAboutMe.removeEventListener("click", closeModalNavbar);
+  openAboutMe.addEventListener("click", openModalNavbar);
   closeModal();
 }
 
-//================HAMBURGER MENU AUTOMATIC CLOSING===================
-hamburgerItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    hamburgerInput.checked = false;
-  });
-});
+openAboutMe.addEventListener("click", openModalNavbar);
+openAboutMeFromHamburger.addEventListener("click", openModal);
+closeAboutMe.addEventListener("click", closeModal);
 
-function closeHamburgerByOutsideClick(e) {
-  if (hamburgerMenu.contains(e.target) || hamburgerInput.contains(e.target)) {
-    return;
-  } else {
-    hamburgerInput.checked = false;
-  }
+//================HAMBURGER MENU AUTOMATIC CLOSING===================
+const hamburgerItemsNodeList = document.querySelectorAll(".hamburger-item"); // NodeList
+const hamburgerItems = Array.from(hamburgerItemsNodeList);
+const sideBarMenu = document.getElementById("sidebar-menu");
+const hamburgerMenu = document.getElementById("hamburger-menu");
+const sideBarTitle = document.querySelector("#sidebar-menu h3");
+
+function openHamburgerMenu() {
+  sideBarMenu.classList.remove("invisible-menu");
+  sideBarMenu.classList.add("visible-menu");
+  hamburgerMenu.removeEventListener("click", openHamburgerMenu);
 }
 
-openButton.addEventListener("click", openModalNavbar);
-openButtonHamburger.addEventListener("click", openModal);
+function closeHamburgerMenu() {
+  sideBarMenu.classList.remove("visible-menu");
+  sideBarMenu.classList.add("invisible-menu");
+  hamburgerMenu.addEventListener("click", openHamburgerMenu);
+}
+
+function closeHamburgerByOutsideClick(e) {
+  if (hamburgerMenu.contains(e.target)) {
+    return;
+  } else {
+    closeHamburgerMenu();
+  }
+}
 document.addEventListener("click", closeHamburgerByOutsideClick);
-closeBtn.addEventListener("click", closeModal);
+
+hamburgerItems.forEach((item) => {
+  item.addEventListener("click", closeHamburgerMenu);
+});
+
+hamburgerMenu.addEventListener("click", openHamburgerMenu);
+sideBarTitle.addEventListener("click", closeHamburgerMenu);
 
 //================PAGE SCROLLING AND ANCHOR TAGS=======================
 function scrollSmoothTo(elementId) {

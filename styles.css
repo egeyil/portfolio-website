@@ -139,12 +139,12 @@ h2,
   }
 }
 
-.open-modal-animation {
+.open-aboutMe-animation {
   -webkit-animation: openModal 0.5s linear forwards;
   animation: openModal 0.5s linear forwards;
 }
 
-.close-modal-animation {
+.close-aboutMe-animation {
   -webkit-animation: closeModal 0.5s linear forwards;
   animation: closeModal 0.5s linear forwards;
 }
@@ -449,15 +449,10 @@ main {
   color: #ccbcbc;
 }
 
-#hamburger-input {
-  display: none;
-  opacity: 0.5;
-}
-
 #hamburger-menu {
   position: fixed;
-  top: 20px;
-  right: 15px;
+  top: 35px;
+  right: 35px;
   width: 40px;
   height: 40px;
   display: none;
@@ -466,26 +461,24 @@ main {
   margin: 0px;
   background: linear-gradient(
     to bottom,
-    #3d0e61,
-    #3d0e61 20%,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0) 20%,
     transparent 20%,
     transparent 40%,
-    #3d0e61 40%,
-    #3d0e61 60%,
+    rgb(0, 0, 0) 40%,
+    rgb(0, 0, 0) 60%,
     transparent 60%,
     transparent 80%,
-    #3d0e61 80%,
-    #3d0e61 100%
+    rgb(0, 0, 0) 80%,
+    rgb(0, 0, 0) 100%
   );
   z-index: 3;
 }
 
-#hamburger-menu #sidebar-menu {
-  visibility: hidden;
+#sidebar-menu {
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 170px;
+  width: 150px;
   height: 100%;
   background-color: #403e5c;
   padding: 0px 10px;
@@ -494,34 +487,34 @@ main {
   transition: 0.5s;
 }
 
-#hamburger-menu h3 {
+#sidebar-menu h3 {
   color: rgb(174, 62, 226);
   font-size: 2.2rem;
 }
 
-#hamburger-menu ul {
+#sidebar-menu ul {
   padding-left: 0px;
 }
 
-#hamburger-menu li {
+#sidebar-menu li {
   list-style-type: none;
-  line-height: 3rem;
+  margin-bottom: 2rem;
 }
 
-#hamburger-menu a {
+#sidebar-menu a {
   color: #b9faf8;
   font-size: 1.3rem;
   text-decoration: none;
 }
 
-#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+.visible-menu {
   visibility: visible;
   right: 0;
 }
 
-#hamburger-input:checked ~ .overlay {
-  visibility: visible;
-  opacity: 0.4;
+.invisible-menu {
+  visibility: hidden;
+  right: -250px;
 }
 
 @media (max-width: 950px) {
@@ -588,6 +581,12 @@ main {
   .links-top {
     margin-bottom: 25vh;
   }
+  #hamburger-menu a {
+    font-size: 19px;
+  }
+  #hamburger-menu li {
+    margin-bottom: 1.5rem;
+  }
   #bio {
     top: 50px;
   }
@@ -619,7 +618,7 @@ main {
     margin: 0;
   }
   #hamburger-menu #sidebar-menu {
-    width: 150px;
+    width: 130px;
   }
   #header h2 {
     font-size: 25px;
