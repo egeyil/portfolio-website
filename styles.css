@@ -26,6 +26,22 @@ h2,
   border: none;
 }
 
+a:visited {
+  text-decoration: none;
+}
+
+.socials {
+  color: rgb(170 166 233);
+}
+
+.socials:hover {
+  color: rgb(193, 189, 248);
+}
+
+.fa-xl {
+  font-size: 30px;
+}
+
 #navbar {
   position: fixed;
   top: 0;
@@ -74,10 +90,6 @@ h2,
   transform: scale(1.2);
   color: rgb(248, 248, 248);
   cursor: pointer;
-}
-
-.navbar-right a:visited {
-  text-decoration: none;
 }
 
 .invisible {
@@ -280,10 +292,6 @@ header a:visited {
   text-decoration: none;
 }
 
-header a:hover {
-  color: #ccbcbc;
-}
-
 main {
   margin: 5em 10vw;
 }
@@ -291,7 +299,7 @@ main {
 .projects-grid {
   display: grid;
   grid-template-columns: 20vw 20vw 20vw;
-  gap: 3vh 3vw;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -320,6 +328,7 @@ main {
   border-radius: 7px;
   padding: 1em 1em;
   min-height: 500px;
+  max-width: 500px;
 }
 
 .project-card:hover {
@@ -358,21 +367,12 @@ main {
 .links-project {
   width: 100%;
   text-align: center;
-  margin-top: 2em;
+  margin: 1.5em 0;
 }
 
 .project-card a {
   text-decoration: none;
-  color: #000000;
   margin: 0 0.5em;
-}
-
-.project-card a:hover {
-  color: rgb(197, 197, 197);
-}
-
-.project-card a:visited {
-  text-decoration: none;
 }
 
 .project-end {
@@ -440,12 +440,7 @@ main {
 
 .contact-icons a {
   transition-duration: 0.2s;
-  color: #000000;
   text-decoration: none;
-}
-
-.contact-icons a:hover {
-  color: #ccbcbc;
 }
 
 #hamburger-input {
