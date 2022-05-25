@@ -19,38 +19,34 @@
     <nav id="navbar">
       <h2>Ege Yıldırım</h2>
 
-      <input type="checkbox" id="hamburger-input" class="burger-shower" />
-      <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-          <h3>Menu</h3>
-          <ul>
-            <li class="hamburger-item">
-              <a onclick="scrollSmoothTo('about-me')" class="about-me-hamburger"
-                >About Me</a
-              >
-            </li>
-            <li class="hamburger-item">
-              <a onclick="scrollSmoothTo('projects')">Projects</a>
-            </li>
-            <li class="hamburger-item">
-              <a onclick="scrollSmoothTo('skills')">Skills</a>
-            </li>
-            <li class="hamburger-item">
-              <a onclick="scrollSmoothTo('contact-me-anchor')">Contact Me</a>
-            </li>
-            <li class="hamburger-item">
-              <a
-                href="images\Ege_Yildirim_Resume.pdf "
-                download="Ege Yildirim Resume"
-                >Download Resume</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </label>
+      <div id="hamburger-menu"></div>
+      <nav id="sidebar-menu" class="invisible-menu">
+        <h3>Menu</h3>
+        <ul>
+          <li class="hamburger-item">
+            <a class="about-me-hamburger">About Me</a>
+          </li>
+          <li class="hamburger-item">
+            <a onclick="scrollSmoothTo('projects')">Projects</a>
+          </li>
+          <li class="hamburger-item">
+            <a onclick="scrollSmoothTo('skills')">Skills</a>
+          </li>
+          <li class="hamburger-item">
+            <a onclick="scrollSmoothTo('contact-me-anchor')">Contact Me</a>
+          </li>
+          <li class="hamburger-item">
+            <a
+              href="images\Ege_Yildirim_Resume.pdf "
+              download="Ege Yildirim Resume"
+              >Download Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
 
       <div class="navbar-right">
-        <a onclick="scrollSmoothTo('about-me')" class="about-me">About Me</a>
+        <a class="about-me">About Me</a>
         <a onclick="scrollSmoothTo('projects')" class="nav-link">Projects</a>
         <a onclick="scrollSmoothTo('skills')" class="nav-link">Skills</a>
         <a onclick="scrollSmoothTo('contact-me-anchor')" class="nav-link"

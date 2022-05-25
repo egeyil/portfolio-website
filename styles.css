@@ -45,6 +45,7 @@ a:visited {
 #navbar {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
   width: 100%;
   display: flex;
@@ -150,12 +151,12 @@ a:visited {
   }
 }
 
-.open-modal-animation {
+.open-aboutMe-animation {
   -webkit-animation: openModal 0.5s linear forwards;
   animation: openModal 0.5s linear forwards;
 }
 
-.close-modal-animation {
+.close-aboutMe-animation {
   -webkit-animation: closeModal 0.5s linear forwards;
   animation: closeModal 0.5s linear forwards;
 }
@@ -450,8 +451,8 @@ main {
 
 #hamburger-menu {
   position: fixed;
-  top: 20px;
-  right: 15px;
+  top: 35px;
+  right: 35px;
   width: 40px;
   height: 40px;
   display: none;
@@ -460,26 +461,24 @@ main {
   margin: 0px;
   background: linear-gradient(
     to bottom,
-    #3d0e61,
-    #3d0e61 20%,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0) 20%,
     transparent 20%,
     transparent 40%,
-    #3d0e61 40%,
-    #3d0e61 60%,
+    rgb(0, 0, 0) 40%,
+    rgb(0, 0, 0) 60%,
     transparent 60%,
     transparent 80%,
-    #3d0e61 80%,
-    #3d0e61 100%
+    rgb(0, 0, 0) 80%,
+    rgb(0, 0, 0) 100%
   );
   z-index: 3;
 }
 
-#hamburger-menu #sidebar-menu {
-  visibility: hidden;
+#sidebar-menu {
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 170px;
+  width: 150px;
   height: 100%;
   background-color: #403e5c;
   padding: 0px 10px;
@@ -488,34 +487,34 @@ main {
   transition: 0.5s;
 }
 
-#hamburger-menu h3 {
+#sidebar-menu h3 {
   color: rgb(174, 62, 226);
   font-size: 2.2rem;
 }
 
-#hamburger-menu ul {
+#sidebar-menu ul {
   padding-left: 0px;
 }
 
-#hamburger-menu li {
+#sidebar-menu li {
   list-style-type: none;
-  line-height: 3rem;
+  margin-bottom: 2rem;
 }
 
-#hamburger-menu a {
+#sidebar-menu a {
   color: #b9faf8;
   font-size: 1.3rem;
   text-decoration: none;
 }
 
-#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+.visible-menu {
   visibility: visible;
   right: 0;
 }
 
-#hamburger-input:checked ~ .overlay {
-  visibility: visible;
-  opacity: 0.4;
+.invisible-menu {
+  visibility: hidden;
+  right: -350px;
 }
 
 @media (max-width: 950px) {
@@ -577,13 +576,19 @@ main {
   }
   #header h2 {
     font-size: 24px;
-    margin-right: 1em;
-    margin-left: 1em;
-    margin-top: 90px;
-    margin-bottom: 18vh;
+    margin: 1em 0 150px 0;
   }
   .links-top {
     margin-bottom: 25vh;
+  }
+  #hamburger-menu a {
+    font-size: 19px;
+  }
+  #hamburger-menu li {
+    margin-bottom: 1.5rem;
+  }
+  #bio {
+    top: 50px;
   }
   #bio h2 {
     margin-bottom: 0.5em;
@@ -613,7 +618,7 @@ main {
     margin: 0;
   }
   #hamburger-menu #sidebar-menu {
-    width: 150px;
+    width: 130px;
   }
   #header h2 {
     font-size: 25px;
@@ -640,5 +645,45 @@ main {
   }
   .contact-icons {
     gap: 2em;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  header h2 {
+    margin-bottom: 120px;
+  }
+  .links-top {
+    margin-bottom: 150px;
+  }
+  #bio {
+    top: 100px;
+    width: 55vw;
+  }
+  #bio .profile {
+    max-height: 150px;
+  }
+  #bio h2 {
+    font-size: 20px;
+    margin-top: 14px;
+  }
+  #bio p {
+    font-size: 14px;
+  }
+  .projects-grid {
+    grid-template-columns: 22.5vw 22.5vw 22.5vw;
+    gap: 20px;
+  }
+  .project-card {
+    min-height: 0;
+  }
+  .fa-xl {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-height: 650px) and (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 40vw 40vw;
+    gap: 35px 35px;
   }
 }
